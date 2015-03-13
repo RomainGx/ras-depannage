@@ -1,0 +1,18 @@
+<h2>Rapports de dépannage enregistrés</h2>
+
+<table style="width:100%;">
+    <tr>
+        <th>Client</th>
+        <th>Début</th>
+        <th>Fin</th>
+        <th>Extrait du rapport</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="report in ListCtrl.reports">
+        <td>{{report.client}}</td>
+        <td>{{report.date_begin | date:'dd/MM/yy HH:mm'}}</td>
+        <td>{{report.date_end | date:'dd/MM/yy HH:mm'}}</td>
+        <td>{{report.report | limitTo: 100}}</td>
+        <td><a href="#/detail/{{report.id}}">Détail</a></td>
+    </tr>
+</table>

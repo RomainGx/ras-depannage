@@ -1,0 +1,181 @@
+<h2>Rapport de dépannage RA Sécurité</h2>
+
+<div class="bs-callout bs-callout-danger" ng-show="FormCtrl.error.msg">
+    <h4 translate>Erreur</h4>
+    <p class="info-text">
+        {{FormCtrl.error.msg}}
+    </p>
+</div>
+
+<form name="editForm" class="form-horizontal" ng-submit="FormCtrl.save()" novalidate>
+    <div class="form-group">
+        <label for="dateBegin" class="col-sm-2 control-label">
+            Date de début
+        </label>
+        <div class="col-sm-2">
+            <input type="text"
+                   name="dateBegin"
+                   id="dateBegin"
+                   class="form-control"
+                   placeholder="jj/mm/aaaa"
+                   ng-model="FormCtrl.data.dateBegin"
+                   ng-pattern="/^[0123]?[0-9]\/[01]?[0-9]\/[12][0-9]{3}$/"
+                   ng-model-options="{ updateOn: 'blur' }"
+                   required/>
+            <div ng-show="editForm.dateBegin.$dirty">
+                <span class="error" ng-show="editForm.dateBegin.$error.required">
+                    Champ obligatoire
+                </span>
+                <span class="error" ng-show="editForm.dateBegin.$error.pattern">
+                    Date invalide
+                </span>
+            </div>
+
+            <input type="text"
+                   name="timeBegin"
+                   id="timeBegin"
+                   class="form-control"
+                   placeholder="hh:mm"
+                   ng-model="FormCtrl.data.timeBegin"
+                   ng-pattern="/^[012]?[0-9]:[0-5]?[0-9]$/"
+                   ng-model-options="{ updateOn: 'blur' }"
+                   required/>
+            <div ng-show="editForm.timeBegin.$dirty">
+                <span class="error" ng-show="editForm.timeBegin.$error.required">
+                    Champ obligatoire
+                </span>
+                <span class="error" ng-show="editForm.timeBegin.$error.pattern">
+                    Heure invalide
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="dateEnd" class="col-sm-2 control-label">
+            Date de fin
+        </label>
+        <div class="col-sm-2">
+            <input type="text"
+                   name="dateEnd"
+                   id="dateEnd"
+                   class="form-control"
+                   placeholder="jj/mm/aaaa"
+                   ng-model="FormCtrl.data.dateEnd"
+                   ng-pattern="/^[0123]?[0-9]\/[01]?[0-9]\/[12][0-9]{3}$/"
+                   ng-model-options="{ updateOn: 'blur' }"
+                   required/>
+            <div ng-show="editForm.dateEnd.$dirty">
+                <span class="error" ng-show="editForm.dateEnd.$error.required">
+                    Champ obligatoire
+                </span>
+                <span class="error" ng-show="editForm.dateEnd.$error.pattern">
+                    Date invalide
+                </span>
+            </div>
+
+            <input type="text"
+                   name="timeEnding"
+                   id="timeEnding"
+                   class="form-control"
+                   placeholder="hh:mm"
+                   ng-model="FormCtrl.data.timeEnding"
+                   ng-pattern="/^[012]?[0-9]:[0-5]?[0-9]$/"
+                   ng-model-options="{ updateOn: 'blur' }"
+                   required/>
+            <div ng-show="editForm.timeEnding.$dirty">
+                <span class="error" ng-show="editForm.timeEnding.$error.required">
+                    Champ obligatoire
+                </span>
+                <span class="error" ng-show="editForm.timeEnding.$error.pattern">
+                    Heure invalide
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="client" class="col-sm-2 control-label">
+            Client
+        </label>
+        <div class="col-sm-4">
+            <input type="text"
+                   name="client"
+                   id="client"
+                   class="form-control"
+                   ng-model="FormCtrl.data.client"
+                   required/>
+            <div ng-show="editForm.client.$dirty">
+                <span class="error" ng-show="editForm.client.$error.required">
+                    Champ obligatoire
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="clientMail" class="col-sm-2 control-label">
+            Adresse mail du client
+        </label>
+        <div class="col-sm-4">
+            <input type="email"
+                   name="clientMail"
+                   id="clientMail"
+                   class="form-control"
+                   ng-model="FormCtrl.data.clientMail"
+                   ng-model-options="{ updateOn: 'blur' }"
+                   placeholder="Adresse à laquelle envoyer une copie du rapport"
+                   required/>
+            <div ng-show="editForm.clientMail.$dirty">
+                <span class="error" ng-show="editForm.clientMail.$error.required">
+                    Champ obligatoire
+                </span>
+                <span class="error" ng-show="editForm.clientMail.$error.email">
+                    Adresse email invalide
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="report" class="col-sm-2 control-label">
+            Rapport
+        </label>
+        <div class="col-sm-10">
+            <textarea name="report"
+                      id="report"
+                      class="form-control"
+                      ng-model="FormCtrl.data.report"
+                      ng-model-options="{ updateOn: 'blur' }"
+                      rows="10"
+                      required></textarea>
+            <div ng-show="editForm.report.$dirty">
+                <span class="error" ng-show="editForm.report.$error.required">
+                    Champ obligatoire
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="techSign" class="col-sm-2 control-label">
+            Signature technicien
+        </label>
+        <div class="col-sm-10">
+            <div id="techSign" ng-click="FormCtrl.setTechSigned()"></div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="clientSign" class="col-sm-2 control-label">
+            Signature client
+        </label>
+        <div class="col-sm-10">
+            <div id="clientSign" ng-click="FormCtrl.setClientSigned()"></div>
+        </div>
+    </div>
+
+    <button type="submit" ng-disabled="!FormCtrl.canSave()" class="btn btn-primary" style="width:100%; margin-top:15px; margin-bottom: 15px;">
+        Enregistrer et envoyer
+    </button>
+</form>

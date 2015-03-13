@@ -358,5 +358,15 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
+/*
+|--------------------------------------------------------------------------
+| Date and time configuration
+|--------------------------------------------------------------------------
+|
+| Modifies the default timezone.
+|
+*/
+date_default_timezone_set('Europe/Paris');
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */
