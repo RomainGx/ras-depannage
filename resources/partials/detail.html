@@ -1,0 +1,40 @@
+<h2>Rapport de dépannage #{{DetailCtrl.report.id}}</h2>
+
+<p>Une copie de ce rapport a été envoyée aux adresses {{DetailCtrl.report.client_mail}} et romain.archimbaud@rasecurite.fr</p>
+
+<hr/>
+<p> </p>
+
+<table>
+    <tr>
+        <td><strong>Client</strong> :</td>
+        <td>{{DetailCtrl.report.client}}</td>
+    </tr>
+    <tr>
+        <td><strong>Technicien</strong> :</td>
+        <td>Romain Archimbaud</td>
+    </tr>
+    <tr>
+        <td><strong>Début de l'intervention</strong> :</td>
+        <td>{{DetailCtrl.report.date_begin | date:'dd/MM/yy HH:mm'}}</td>
+    </tr>
+    <tr>
+        <td><strong>Fin de l'intervention</strong> :</td>
+        <td>{{DetailCtrl.report.date_end | date:'dd/MM/yy HH:mm'}}</td>
+    </tr>
+</table>
+
+<br/>
+
+<strong>Rapport</strong> :<br/>
+<p ng-bind-html="DetailCtrl.report.report"></p>
+
+<br/>
+
+<strong>Signature du client</strong> :<br/>
+<img ng-src="{{DetailCtrl.report.client_signature}}" alt="Erreur signature"/>
+
+<br />
+
+<strong>Signature du technicien</strong> :<br/>
+<img ng-src="{{DetailCtrl.report.tech_signature}}" alt="Erreur signature"/>

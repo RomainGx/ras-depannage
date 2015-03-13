@@ -12,6 +12,7 @@
             .when('/newReport', { templateUrl: 'resources/partials/form.html', controller: 'FormController', controllerAs: 'FormCtrl' })
             .when('/listReports', { templateUrl: 'resources/partials/list.html', controller: 'ListController', controllerAs: 'ListCtrl' })
             .when('/success', { templateUrl: 'resources/partials/success.html', controller: 'SuccessController', controllerAs: 'SuccessCtrl' })
+            .when('/detail/:id', { templateUrl: 'resources/partials/detail.html', controller: 'DetailController', controllerAs: 'DetailCtrl' })
             .otherwise({ redirectTo: '/newReport' });
     }
 })();

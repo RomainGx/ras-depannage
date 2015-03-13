@@ -104,6 +104,29 @@ class Home extends CI_Controller
         return $outputFile;
     }
 
+    public function getReport($id)
+    {
+        $this->load->database();
+
+        $query = $this->db->query('SELECT * FROM depannage WHERE id = ?', array($id));
+        $data = array();
+        foreach ($query->result() as $row)
+        {
+            $data = array(
+                'id' => $row->id,
+                'date_begin' => (new DateTime($row->date_begin))->format('U') * 1000,
+                'date_end' => (new DateTime($row->date_end))->format('U') * 1000,
+                'client_signature' => $row->client_signature,
+                'tech_signature' => $row->tech_signature,
+                'client' => $row->client,
+                'client_mail' => $row->client_mail,
+                'report' => nl2br($row->report)
+            );
+        }
+
+        echo json_encode($data);
+    }
+
     public function getReports()
     {
         $this->load->database();

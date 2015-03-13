@@ -27,6 +27,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-touch.js"></script>
 <script src="resources/javascript/app.module.js"></script>
 <script src="resources/javascript/app.js"></script>
@@ -39,6 +40,7 @@
 <script src="resources/javascript/form.js"></script>
 <script src="resources/javascript/success.js"></script>
 <script src="resources/javascript/list.js"></script>
+<script src="resources/javascript/detail.js"></script>
 
 </body>
 </html>

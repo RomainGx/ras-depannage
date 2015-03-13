@@ -7,9 +7,11 @@
             'ngRoute',
             'ngTouch',
             'ngResource',
+            'ngSanitize',
 
             // Custom dependencies
             'app.form',
+            'app.detail',
             'app.success',
             'app.list',
 
